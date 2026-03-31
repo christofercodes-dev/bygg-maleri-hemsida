@@ -1,0 +1,78 @@
+.section {
+    padding: 100px 0;
+    background: #ffffff;
+  }
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px; /* Linjerar perfekt med din Hero */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  .featureCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px; /* Rundade hörn men inte cirkel, för en modern look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .featureCard:hover .iconWrapper {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .featureTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  
+  .featureDesc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #86868b;
+  }
+  
+  /* Mobilanpassning */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 24px; /* Linjerar med Hero-mobil */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .featureCard {
+      align-items: center;
+      text-align: center;
+    }
+    .iconWrapper {
+      margin-bottom: 16px;
+    }
+  }

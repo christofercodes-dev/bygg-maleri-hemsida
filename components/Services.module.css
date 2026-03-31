@@ -1,0 +1,133 @@
+.section {
+    padding: 120px 0; /* Vertikal padding, ingen horisontell här */
+    background: #f8f9fa;
+    width: 100%;
+  }
+  
+  .container {
+    /* EXAKT SAMMA SOM HERO */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px; /* Samma sidmarginaler som din Hero */
+  }
+  
+  .header {
+    margin-bottom: 60px;
+  }
+  
+  .label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #0071e3;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  .title {
+    font-size: clamp(32px, 5vw, 48px);
+    color: #1d1d1f;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
+    min-height: 450px;
+    height: 100%;
+  cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Gör att länken tar upp hela grid-cellens plats */
+  }
+  
+
+  
+  .large {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    flex: 1.17; /* Lite mer fokus på bilden */
+    min-height: 300px;
+  }
+  
+  .image {
+    object-fit: cover;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .serviceTitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1d1d1f;
+    letter-spacing: -0.01em;
+  }
+  
+  .serviceDesc {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #48484a;
+    margin-bottom: 32px;
+  }
+  
+  .readMore {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0071e3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Mobilanpassning - Linjerar med Hero-mobil */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 24px; /* Samma som Hero på mobil */
+    }
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .large {
+      grid-column: span 1;
+      flex-direction: column;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .content {
+      padding: 32px;
+    }
+  }
