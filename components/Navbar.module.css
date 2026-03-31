@@ -23,7 +23,7 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px; /* Samma som dina andra sektioner */
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,21 +35,20 @@
     gap: 12px;
     text-decoration: none;
     color: #1d1d1f;
-    z-index: 1100; /* Så den syns över mobilmenyn */
+    z-index: 1100;
   }
   
-  /* Om bakgrunden är mörk i Heron, gör logon vit när man är längst upp */
+  /* FÄRG-LOGIK: Vit text/knapp i Heron, mörk text när man scrollat */
   .nav:not(.scrolled) .logo,
-  .nav:not(.scrolled) .navLink {
-    color: #ffffff;
+  .nav:not(.scrolled) .navLink,
+  .nav:not(.scrolled) .mobileMenuBtn {
+    color: #ffffff; /* Här blir hamburgermenyn VIT */
   }
   
-  .scrolled .logo, .scrolled .navLink {
-    color: #1d1d1f;
-  }
-  
-  .logoIcon {
-    color: #0071e3;
+  .scrolled .logo, 
+  .scrolled .navLink,
+  .scrolled .mobileMenuBtn {
+    color: #1d1d1f; /* Här blir hamburgermenyn MÖRK */
   }
   
   .logoText {
@@ -95,72 +94,95 @@
     transform: scale(1.05);
   }
   
-  /* Mobilknapp */
+  /* MOBILKNAPP */
   .mobileMenuBtn {
-    display: none;
+    display: none; /* Dold på desktop */
     background: none;
     border: none;
     cursor: pointer;
     z-index: 1100;
-    color: inherit; /* Tar färg från nav-föräldern */
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
   }
   
-  /* Mobil-overlay */
+  /* MOBIL-OVERLAY */
   .mobileOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: white;
+    background: #ffffff;
     z-index: 1050;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
   }
   
   .mobileLinks {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 25px;
     width: 100%;
     padding: 20px;
   }
   
   .mobileLinks a {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 24px;
+    font-weight: 700;
     color: #1d1d1f;
     text-decoration: none;
+    transition: transform 0.2s;
+  }
+  
+  .mobileLinks a:active {
+    transform: scale(0.95);
   }
   
   .mobileCta {
-    background: #0071e3;
+    background: #0071e3 !important;
     color: white !important;
-    width: 80%;
+    width: 85% !important;
+    max-width: 300px;
     text-align: center;
-    padding: 18px;
-    border-radius: 12px;
+    padding: 16px !important;
+    border-radius: 12px !important;
+    margin-top: 10px;
   }
   
   .mobileContactInfo {
-    margin-top: 40px;
+    margin-top: 50px;
     text-align: center;
     color: #86868b;
     font-size: 14px;
+    line-height: 1.6;
   }
   
-  /* RESPONSIVITET */
+  /* RESPONSIVITET - Aktiveras under 900px */
   @media (max-width: 900px) {
     .desktopLinks {
       display: none;
     }
+  
     .mobileMenuBtn {
-      display: block;
+      display: flex; /* Visar hamburgaren */
     }
+  
     .container {
-      padding: 0 24px; /* Linjerar med din mobil-padding i övriga sektioner */
+      padding: 0 24px;
+    }
+  
+    .nav {
+      height: 70px; /* Något lägre navbar på mobil */
+    }
+  
+    /* Fix så loggan alltid är mörk när menyn är öppen (valfritt) */
+    :global(.menu-open) .logo {
+      color: #1d1d1f !important;
     }
   }

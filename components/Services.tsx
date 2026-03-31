@@ -67,7 +67,7 @@ export default function Services() {
                 <div className={styles.content}>
                   <h3 className={styles.serviceTitle}>{service.title}</h3>
                   <p className={styles.serviceDesc}>{service.desc}</p>
-                  <span className={styles.readMore}>Läs mer ↗</span>
+                  <span className={styles.readMore}>Läs mer</span>
                 </div>
               </motion.div>
             </Link>
