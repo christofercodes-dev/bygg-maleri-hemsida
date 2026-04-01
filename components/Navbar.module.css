@@ -180,9 +180,32 @@
     .nav {
       height: 70px; /* Något lägre navbar på mobil */
     }
+
+    .desktopLinks {
+      display: none;
+    }
+  
+    .mobileMenuBtn {
+      display: flex; /* Visas endast under 900px */
+    }
+    
+    /* Om du vill visa overlayen när en klass (t.ex. .is-open) läggs till via JS */
+    .mobileOverlay.is-open {
+      display: flex;
+    }
   
     /* Fix så loggan alltid är mörk när menyn är öppen (valfritt) */
     :global(.menu-open) .logo {
       color: #1d1d1f !important;
+    }
+  }
+
+  .mobileMenuBtn {
+    display: none !important; /* Tvingar den att döljas */
+  }
+  
+  @media (max-width: 900px) {
+    .mobileMenuBtn {
+      display: flex !important; /* Tvingar den att visas på mobil */
     }
   }
