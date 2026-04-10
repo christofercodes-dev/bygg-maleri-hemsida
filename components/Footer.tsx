@@ -31,7 +31,6 @@ export default function Footer() {
               <h4>Navigation</h4>
               <Link href="/">Hem</Link>
               <Link href="#tjanster">Tjänster</Link>
-              <Link href="#projekt">Referensprojekt</Link>
               <Link href="#offert">Få offert</Link>
             </div>
             <div className={styles.linkGroup}>

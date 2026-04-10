@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Hero/>
       <Services/>
-      <Features/>
+      {/* <Features/> */}
       <Contact/>
       
     </div>

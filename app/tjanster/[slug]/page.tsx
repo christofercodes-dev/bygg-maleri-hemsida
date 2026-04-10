@@ -8,7 +8,7 @@ const serviceData = {
   maleri: {
     title: "Professionellt Måleri",
     subtitle: "Vi sätter färg på Kristianstad med precision",
-    description: "Våra erfarna målare utför allt från invändig målning av villor till stora fasadrenoveringar. Vi vet att underarbetet är nyckeln till ett hållbart resultat, därför slarvar vi aldrig med spackling eller grundmåling.",
+    description: "Våra erfarna målare utför allt från invändig målning av villor till stora fasadrenoveringar. Vi vet att underarbetet är nyckeln till ett hållbart resultat, därför slarvar vi aldrig med spackling eller grundmålning.",
     image: "/images/reno2.avif",
     points: [
       "Invändig & Utvändig målning",

@@ -63,7 +63,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
                     <div className={styles.logoText}>
-                        BYGG & MÅLERI <span>AB</span>
+                        FARBKONCEPT <span>AB</span>
                     </div>
                 </Link>
 
